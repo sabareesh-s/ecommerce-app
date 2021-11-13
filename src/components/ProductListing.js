@@ -3,12 +3,13 @@ import axios from 'axios'
 
 
 function ProductListing() {
-    let [product, setProduct] = useState([])
+    const [product, setProduct] = useState([])
     {    useEffect(() => {
         axios.get(`https://store.rebune.net/api/products.json`).then((response)=>{
             
             console.log(response.data);
             setProduct(response.data);
+            
                 
         })
      }, [])
